@@ -14,12 +14,16 @@ class UploadController extends Controller
 
     public function getAllFile(){
         $entry = scandir(storage_path("app\img"));
+        $fileList = array();
 
         foreach ($entry as $key => $value) {
             if ($value != "." && $value != "..") {
-                echo "$value <br>\n";
+                //echo "$value <br>\n";
+                array_push($fileList, $value);
             }
         }
+
+        return $fileList;
     }
 
     public function downloadFile($file){//string $file
