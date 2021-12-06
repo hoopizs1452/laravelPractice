@@ -12,7 +12,7 @@ class UploadController extends Controller
         return $req->file('file')->storeAs('img', $fileName);
     }
 
-    public function getAllFile(){
+    public static function getAllFile(){
         $entry = scandir(storage_path("app\img"));
 
         foreach ($entry as $key => $value) {

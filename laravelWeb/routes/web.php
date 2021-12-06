@@ -10,7 +10,8 @@ Route::get('/', function () {
 Route::view('upload', 'upload');
 Route::post('upload', [UploadController::class, 'index']);
 Route::get('downloadFile/{file}', [UploadController::class, 'downloadFile']);
-Route::get('getAllFile', [UploadController::class, 'getAllFiles']);
+Route::view('getFile', 'getFile');
+//Route::get('getAllFile', [UploadController::class, 'getAllFile']);
 // Route::view('getAllFile', function(){
 //     $file = UploadController::class->getAllFile;
 //     return view('getAllFile', ['getAllFile' => $file]);
