@@ -20,15 +20,14 @@
 
         $file = new UploadController();
         //echo $file->getAllFile();
-        $fileList = $file->getAllFile();
+        $fileList[] = $file->getAllFile();
         for ($i=0; $i < count($fileList); $i++ ) { 
             //echo "$fileList[$i] <br />";
         //}
     ?>
 
-{{-- <input type="button" style="background-image:url(app\img\<?php $fileList[$i] ?>);"> --}}
-<?php } ?>
 <img src="http://192.168.230.128:8015/storage/6O6Ijeq.png">
+<?php } ?>
 </div>
 
 @endsection

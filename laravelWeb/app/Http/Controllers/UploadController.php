@@ -13,22 +13,18 @@ class UploadController extends Controller
     }
 
     public function getAllFile(){
-        $entry = scandir(storage_path("app\img"));
-        $fileList = array();
+        $entry = scandir(storage_path("app/img"));
 
         foreach ($entry as $key => $value) {
             if ($value != "." && $value != "..") {
-                //echo "$value <br>\n";
-                array_push($fileList, $value);
+                echo "$value <br>\n";
             }
         }
-
-        return $fileList;
     }
 
-    public function downloadFile($file){//string $file
+    public function downloadFile($file){
         
-        $filePath = storage_path("app\\img\\$file");//
+        $filePath = storage_path("app\\img\\$file");//IMG_3698.jpg
     	$headers = ['Content-Type: application/JPEG'];
     	$fileName = time().'.img';
 

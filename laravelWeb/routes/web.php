@@ -8,11 +8,9 @@ Route::get('/', function () {
 });
 
 Route::view('upload', 'upload');
+//Route::get('/upload', function () { return view('uplaod'); });
 Route::post('upload', [UploadController::class, 'index']);
-Route::get('downloadFile/{file}', [UploadController::class, 'downloadFile']);
-Route::view('getFile', 'getFile');
+//Route::get('test', function () { return view('home'); });
+Route::get('downloadFile', [UploadController::class, 'downloadFile']);
 //Route::get('getAllFile', [UploadController::class, 'getAllFile']);
-// Route::view('getAllFile', function(){
-//     $file = UploadController::class->getAllFile;
-//     return view('getAllFile', ['getAllFile' => $file]);
-// });
+Route::view('getFile', 'getFile');
