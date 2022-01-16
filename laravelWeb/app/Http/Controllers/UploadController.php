@@ -17,7 +17,7 @@ class UploadController extends Controller
 
         foreach ($entry as $key => $value) {
             if ($value != "." && $value != "..") {
-                echo "$value <br>\n";
+                echo "<img src='http://192.168.230.128:8015/storage/$value'><br>\n";
             }
         }
     }

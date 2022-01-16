@@ -37,9 +37,11 @@
                         <span class="mx-2">Upload Image</span>
                     </a>
                 </li>
-                <li href="#" class="nav-link">
-                    <i class="bx bx-conversation"></i>
-                    <span class="mx-2">Contact</span>
+                <li class="nav-link">
+                    <a href="{{ url('getFile') }}" style="text-decoration:none;">
+                        <i class="bx bx-user-check"></i>
+                        <span class="mx-2">Get File</span>
+                    </a>
                 </li>
             </ul>
 

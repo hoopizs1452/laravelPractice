@@ -22,11 +22,12 @@
         //echo $file->getAllFile();
         $fileList[] = $file->getAllFile();
         for ($i=0; $i < count($fileList); $i++ ) { 
+            $imgName = $fileList[$i];
             //echo "$fileList[$i] <br />";
         //}
     ?>
 
-<img src="http://192.168.230.128:8015/storage/6O6Ijeq.png">
+<!-- <img src="http://192.168.230.128:8015/storage/6O6Ijeq.png"> -->
 <?php } ?>
 </div>
 
