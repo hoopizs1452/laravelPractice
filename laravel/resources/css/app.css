@@ -1,5 +1,3 @@
-ul,li{ padding:0; margin:0; overflow:hidden;}
-li{ list-style:none;}
-img{ border:0;}
-.box{ width:440px;}
-.box li{ float:left; width:100px; height:80px; margin-right:10px;}
+#fo{
+    margin:0px; display:inline;
+}

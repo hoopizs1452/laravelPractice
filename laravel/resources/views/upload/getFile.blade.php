@@ -2,11 +2,6 @@
 
 @section('content')
 
-<div>
-    
-<!-- <img src="http://192.168.230.128:8015/storage/6O6Ijeq.png"> -->
-</div>
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -29,19 +24,27 @@
                 $file = new UploadController();
                 //echo $file->getAllFile();
                 $fileList = $file->getAllFile();
-                $count = 1;
-                for ($i=0; $i < count($fileList); $i++ ) { 
-                    
+                $count = 0;
             ?>
+            <table border=0>
+            <tr>
             <!-- <img src="http://192.168.66.81:8013/storage/<?php //echo $fileList[$i]; ?>" width="600" heigh="400"> -->
-            <form class="form-horizontal" role="form" action="downloadFile/<?php echo $fileList[$i]; ?>" method="GET">
-                <div class="form-group">
-                    <input type="image" src="http://192.168.66.81:8013/storage/<?php echo $fileList[$i]; ?>" name="imgName" width="100" heigh="80" />
-                </div>
-                
-            </form>
+            <?php
+                foreach ($fileList as $img) { 
+                    if($count%5==0) echo '</tr><tr>';
 
-        <?php } ?>
+            ?>
+            <td>
+                <form action="downloadFile/<?php echo $img; ?>" method="GET">
+                    <input type="image" src="http://192.168.66.81:8013/storage/<?php echo $img; ?>" width="100" heigh="80" style="object-fit: cover" />
+                </form>
+            </td>
+            <?php
+                    $count++;
+                }
+            ?>
+            </tr>
+            </table>
         </div>
     </div>
 </div>
