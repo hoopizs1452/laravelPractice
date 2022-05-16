@@ -48,7 +48,13 @@
             <hr class="solid">
 
             <div>
-                <form action="{{ 'test' }}" method="POST">
+
+                {{-- @php
+                    $salaries = Session::get('salaries');
+                    $selected = Session::get('selected');
+                @endphp --}}
+
+                <form action="{{ route('salaries.filter') }}" method="POST">
                     @csrf
                     <select class="form-select" id="select" name="select" aria-label="Default select example" style="width:auto;" onchange="this.form.submit()">
                         @if ($selected == 0)

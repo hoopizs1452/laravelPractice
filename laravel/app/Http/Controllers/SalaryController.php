@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class SalaryController extends Controller
 {
     private $month;
+    
     /**
      * Display a listing of the resource.
      *
@@ -127,5 +128,9 @@ class SalaryController extends Controller
         $selected = $this->month;
         $salaries = Salary::whereRaw('MONTH(date) = '.$this->month)->orderBy('date', 'ASC')->paginate(7);
         return view('ptSalary', compact('salaries', 'selected'));
+        // return redirect()->route('salaries.index')->with(['salaries'=>$salaries, 'selected'=>$selected]);
+        // return redirect()->action(
+        //     [SalaryController::class, 'index'], ['salaries' => $salaries, 'selected' => $selected]
+        // );
     }
 }
