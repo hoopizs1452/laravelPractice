@@ -19,7 +19,8 @@ class SalaryController extends Controller
         $this->month = date("m");
         $selected = 0;
         $salaries = Salary::whereRaw('MONTH(date) = '.$this->month)->orderBy('date', 'ASC')->paginate(7);
-        return view('ptSalary', compact('salaries', 'selected'));
+        $salariesTotal = Salary::whereRaw('MONTH(date) = '.$this->month)->orderBy('date', 'ASC')->get();
+        return view('ptSalary', compact('salaries', 'salariesTotal', 'selected'));
     }
 
     /**

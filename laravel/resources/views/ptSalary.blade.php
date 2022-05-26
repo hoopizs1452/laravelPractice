@@ -113,9 +113,9 @@
                     
                 </tbody>
                 @endforeach
-                @foreach ($salaries as $salary)
+                @foreach ($salariesTotal as $salaryTotal)
                 @php
-                    $total += $salary->total;
+                    $total += $salaryTotal->total;
                 @endphp
                 @endforeach
                 
